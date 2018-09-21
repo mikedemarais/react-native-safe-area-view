@@ -38,3 +38,22 @@ withSafeArea()(Component);
 // Or with forceInset props
 withSafeArea({ top: 'always' })(Component);
 ```
+
+## methods
+
+### getInset(key, isLandscape)
+
+If you need to access inset information, use the SafeAreaView's static `getInset` method.
+Accepts 2 parameters:
+#### key
+`top | right | bottom | left` 
+
+The inset direction to get
+#### isLandscape
+`true | false`
+
+Whether the app is currently in landscape position. Default = false
+Example:
+```javascript
+  <NavigationHeader style={{paddingTop: SafeAreaView.getInset('top')}} />
+```
